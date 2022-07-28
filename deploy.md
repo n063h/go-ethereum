@@ -52,8 +52,8 @@ cp build/bin/geth .
 
 4. create node
 ```bash
-nohup ./geth --identity "eth1" --datadir "eth1" --ipcpath "eth1\geth\geth.ipc" --port "10605" --ws.origins '*' --ws.port "10606" --ws.api personal,eth,net,web3 --http --http.port "10607" --http.api personal,miner,eth,net,web3 --networkid "49323217" --allow-insecure-unlock  >> 1.log 
+nohup ./geth --datadir "eth1" --networkid "49323217" --rpc --rpcapi "db,eth,net,web3,miner,personal" console >> 1.log 
 ```
 
 5. attach js cli to node
-`./geth attach http://127.0.0.1:10607`
+`./geth attach http://127.0.0.1:8545`
